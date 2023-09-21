@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import ShowList from '../components/ShowList.vue'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
-const categories = ref(["Drama", "Comedy", "Children", "Action", "Romance"]);
-
-onMounted(() => {
-  console.log(`The initial count is 1`)
-})
+const categories = ref<string[]>(["Drama", "Comedy", "Children", "Action", "Romance"]);
 
 defineExpose({
   categories,

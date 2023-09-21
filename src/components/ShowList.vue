@@ -3,20 +3,19 @@ import { ref, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useLoadingStore } from '../stores/loadingStore';
 import LoadingSpinner from './LoadingSpinner.vue';
+import { type ShowDto } from '../models/show';
 import { API_URL } from "../constants";
 
 const props = defineProps(['category'])
-const shows = ref([]);
+const shows = ref<ShowDto[]>([]);
 const loadingStore = useLoadingStore();
 const { loading } = storeToRefs(useLoadingStore())
 
 onMounted(async () => {
-  console.log(`The initial count is 1 ${props.category}`)
   try {
     loadingStore.setLoading(true);
     const response = await fetch(`${API_URL}search/shows?q=${props.category}`);
     const data = await response.json();
-    console.log(data);
     shows.value = data;
     loadingStore.setLoading(false);
 

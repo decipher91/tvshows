@@ -1,18 +1,31 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+import SearchInput from './components/SearchInput.vue'
+import ShowSearch from './components/ShowSearch.vue'
+import { useSearchStore } from "./stores/searchStore";
+
+const searchStore = useSearchStore();
+
 </script>
 
 <template>
-  <header>
-  </header>
-  <RouterView />
+  <div class="container">
+    <SearchInput />
+    <div class="view-container">
+      <RouterView v-if="!searchStore.isSearching" />
+      <ShowSearch v-else />
+    </div>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+
+.container {
+  position: relative;
+}
+
+.view-container {
+  padding-top: 60px;
 }
 
 .logo {

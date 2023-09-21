@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { storeToRefs } from 'pinia'
+import { useRoute } from 'vue-router';
+import { storeToRefs } from 'pinia';
 import { useLoadingStore } from '../stores/loadingStore';
 import LoadingSpinner from '../components/LoadingSpinner.vue';
 import { API_URL } from "../constants";
@@ -17,7 +17,6 @@ onMounted(async () => {
     loadingStore.setLoading(true);
     const response = await fetch(`${API_URL}shows/${route.params.id}`);
     const data = await response.json();
-    console.log(data);
     show.value = data;
     loadingStore.setLoading(false);
 
