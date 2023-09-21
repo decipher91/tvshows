@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 interface SearchState {
   isSearching: boolean;
@@ -6,7 +6,7 @@ interface SearchState {
   pristine: boolean;
 }
 
-export const useSearchStore = defineStore('searchStore', {
+export const useSearchStore = defineStore("searchStore", {
   state: (): SearchState => ({
     isSearching: false,
     pristine: true,
@@ -17,10 +17,10 @@ export const useSearchStore = defineStore('searchStore', {
       this.isSearching = searching;
     },
     setQuery(query: string) {
-        this.query = query;
+      this.query = query;
     },
     setDirty() {
       this.pristine = false;
-    }
+    },
   },
-})
+});

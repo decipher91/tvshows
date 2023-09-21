@@ -1,10 +1,10 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 interface LoadingState {
   loading: boolean;
 }
 
-export const useLoadingStore = defineStore('loadingStore', {
+export const useLoadingStore = defineStore("loadingStore", {
   state: (): LoadingState => ({
     loading: false,
   }),
@@ -13,4 +13,4 @@ export const useLoadingStore = defineStore('loadingStore', {
       this.loading = loading;
     },
   },
-})
+});

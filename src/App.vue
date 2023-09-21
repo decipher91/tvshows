@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import SearchInput from './components/SearchInput.vue'
-import ShowSearch from './components/ShowSearch.vue'
+import { RouterView } from "vue-router";
+import SearchInput from "./components/SearchInput.vue";
+import ShowSearch from "./components/ShowSearch.vue";
 import { useSearchStore } from "./stores/searchStore";
 
 const searchStore = useSearchStore();
-
 </script>
 
 <template>
@@ -19,7 +18,6 @@ const searchStore = useSearchStore();
 </template>
 
 <style scoped>
-
 .container {
   position: relative;
 }

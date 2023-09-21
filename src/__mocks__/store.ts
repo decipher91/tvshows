@@ -1,4 +1,4 @@
 export const useLoadingStore = {
-    loading: false,
-    setLoading: jest.fn(),
-  };
+  loading: false,
+  setLoading: jest.fn(),
+};
